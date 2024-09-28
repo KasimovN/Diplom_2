@@ -13,7 +13,8 @@ class TestLogin:
         del body['name']
         login_response = StarburgerApi.login(body)
         deleted_user = StarburgerApi.delete_user(new_user_token)
-        assert login_response.status_code == 200 and new_user_token == login_response.json()['accessToken']
+        assert (login_response.status_code == 200
+                and new_user.json()['user']['email'] == login_response.json()['user']['email'])
 
     @pytest.mark.parametrize('param', ApiData.REQUIRED_LOGIN_PARAM)
     def test_login_fail_creds(self, param):
