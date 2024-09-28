@@ -25,6 +25,9 @@ class StarburgerApi:
         change_response = requests.patch(ApiData.URL + ApiData.USER_API, json=body,
                                          headers={'Authorization': accesstoken})
         return change_response
-token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZjZmZmY1OWVkMjgwMDAxYjRjNDkwZSIsImlhdCI6MTcyNzUxNzM0NywiZXhwIjoxNzI3NTE4NTQ3fQ.846D9VgsukSrBbGcCHY4O_nbjydD2z-pT3gFP4O96y8'
-body = {"name": "NikolaiKasimov777"}
-print(StarburgerApi.change_user_creds(token,body).json())
+
+    @staticmethod
+    def create_order(accesstoken, body):
+        order_response = requests.post(ApiData.URL + ApiData.OREDER_API, json=body,
+                                       headers={'Authorization': accesstoken})
+        return order_response
