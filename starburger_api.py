@@ -31,3 +31,8 @@ class StarburgerApi:
         order_response = requests.post(ApiData.URL + ApiData.OREDER_API, json=body,
                                        headers={'Authorization': accesstoken})
         return order_response
+
+    @staticmethod
+    def get_order(accesstoken):
+        order_response = requests.get(ApiData.URL + ApiData.OREDER_API, headers={'Authorization': accesstoken})
+        return order_response
