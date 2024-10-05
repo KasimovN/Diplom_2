@@ -1,5 +1,4 @@
 import pytest
-
 from data import ApiData
 from helper import Helper
 from starburger_api import StarburgerApi

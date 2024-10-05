@@ -1,5 +1,3 @@
-
-
 class ApiData:
     URL = 'https://stellarburgers.nomoreparties.site/'
     USER_REGISTRATION_API = 'api/auth/register'
@@ -17,3 +15,6 @@ class ApiData:
     REQUIRED_LOGIN_PARAM = ["email", "password"]
     DODY_CREATE_ORDER = {"ingredients": ["61c0c5a71d1f82001bdaaa6f", "61c0c5a71d1f82001bdaaa6d"]}
     DODY_CREATE_ORDER_WRONG = {"ingredients": ["12345689asdfghjkl", "asdfghjkl1234567890"]}
+    ERROR_AUTHORIZATION_BODY = "You should be authorised"
+    ERROR_INGREDIENT_BODY = "Ingredient ids must be provided"
+    ERROR_USER_EXIST = "User already exists"

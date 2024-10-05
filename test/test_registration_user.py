@@ -1,5 +1,4 @@
 import pytest
-
 from data import ApiData
 from helper import Helper
 from starburger_api import StarburgerApi
@@ -21,7 +20,7 @@ class TestRegistrationUser:
 
         deleted_new_user = StarburgerApi.delete_user(new_user_token)
 
-        assert (duplicate_user.status_code == 403 and duplicate_user.json()['message'] == 'User already exists'
+        assert (duplicate_user.status_code == 403 and duplicate_user.json()['message'] == ApiData.ERROR_USER_EXIST
                 and deleted_new_user.status_code == 202)
 
     @pytest.mark.parametrize('param', ApiData.REQUIRED_REGISTER_PARAM)
@@ -30,4 +29,3 @@ class TestRegistrationUser:
         del body[param]
         new_user = StarburgerApi.user_registration(body)
         assert new_user.status_code == 403 and new_user.json()['message'] == ApiData.RESPONSE_BODY_ERROR_REGISTRATION
-

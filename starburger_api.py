@@ -1,7 +1,5 @@
 import requests
-
 from data import ApiData
-# from helper import Helper
 
 
 class StarburgerApi:

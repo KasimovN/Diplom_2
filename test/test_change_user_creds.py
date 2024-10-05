@@ -1,5 +1,5 @@
 import pytest
-
+from data import ApiData
 from helper import Helper
 from starburger_api import StarburgerApi
 
@@ -15,4 +15,5 @@ class TestChangeUserCreds:
     def test_change_user_creds_without_token(self, change_cred, create_user):
         token = ''
         change_response = StarburgerApi.change_user_creds(token, change_cred)
-        assert change_response.status_code == 401 and change_response.json()['message'] == "You should be authorised"
+        assert (change_response.status_code == 401 and change_response.json()['message'] ==
+                ApiData.ERROR_AUTHORIZATION_BODY)

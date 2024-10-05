@@ -1,5 +1,4 @@
 from faker import Faker
-
 from data import ApiData
 
 
@@ -14,18 +13,11 @@ class Helper:
 
         return body
 
-    # @staticmethod
-    # def create_fake_login_body():
-    #     body = Helper.create_fake_registration_body()
-    #     del body['name']
-    #
-    #     return body
     @staticmethod
     def body_change_creds():
         random_body = Helper.create_fake_registration_body()
         body = []
         for i in ApiData.REQUIRED_REGISTER_PARAM:
-            param = {}
-            param[i] = random_body[i]
+            param = {i: random_body[i]}
             body.append(param)
         return body
